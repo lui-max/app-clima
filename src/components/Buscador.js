@@ -9,8 +9,11 @@ function Buscador({ ciudad, setCiudad, buscarClima, unidad, setUnidad }) {
           onChange={(e) => setCiudad(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && buscarClima()}
         />
-        <button onClick={buscarClima}>Buscar</button>
+
+        <button type="button" onClick={() => buscarClima()}>Buscar</button>
       </div>
+
+      
       <div style={{ textAlign: "center" }}>
         <button
           className="toggle-unidad"
