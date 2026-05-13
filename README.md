@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+🌤️ Aplicación del Clima
+Aplicación web full stack que permite consultar el clima en tiempo real de cualquier ciudad del mundo. Incluye sistema de autenticación con registro e inicio de sesión de usuarios.
+🔗 Demo en vivo: lui-max.github.io/app-clima
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🏗️ Arquitectura
+Frontend (React)          Backend (Node/Express)       Base de datos
+GitHub Pages        →     Railway                  →   MySQL (Railway)
+lui-max.github.io         mi-backend-production             ↑
+                          -dfcf.up.railway.app          Usuarios registrados
+                               ↓
+                        OpenWeatherMap API
 
-## Available Scripts
+✨ Funcionalidades
 
-In the project directory, you can run:
+🔐 Registro e inicio de sesión de usuarios
+🌡️ Consulta del clima actual por ciudad
+📅 Pronóstico de los próximos días
+🌬️ Datos de temperatura, humedad y viento
+🔄 Cambio entre °C y °F
+🚪 Cierre de sesión
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🛠️ Stack tecnológico
+Frontend
+TecnologíaUsoReactLibrería principal de UIJavaScriptLenguaje baseCSSEstilos y diseño responsiveGitHub PagesDeploy del frontend
+Backend
+TecnologíaUsoNode.jsEntorno de ejecuciónExpressFramework HTTPbcryptHash seguro de contraseñasJWTAutenticación con tokensMySQLBase de datos relacionalRailwayDeploy del backend y DB
+API Externa
+ServicioUsoOpenWeatherMapDatos del clima en tiempo real
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🔒 Seguridad
 
-### `npm test`
+Contraseñas hasheadas con bcrypt (salt rounds: 10)
+Autenticación mediante JSON Web Tokens (JWT)
+Variables de entorno para credenciales sensibles
+Validación de campos en frontend y backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+🚀 Correr localmente
+Frontend
+bashgit clone https://github.com/lui-max/app-clima
+cd app-clima
+npm install
+npm start
+Backend
+bashgit clone https://github.com/lui-max/mi-backend
+cd mi-backend
+npm install
+Crea un archivo .env con:
+DB_HOST=tu_host
+DB_USER=tu_usuario
+DB_PASSWORD=tu_password
+DB_NAME=tu_base_de_datos
+JWT_SECRET=tu_secreto
+bashnode index.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📡 Endpoints del API
+MétodoEndpointDescripciónPOST/registroRegistra un nuevo usuarioPOST/loginInicia sesión y devuelve JWT
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👤 Autor
+Luis Angel Alvarez Quijandria — github.com/lui-max
