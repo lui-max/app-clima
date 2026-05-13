@@ -1,314 +1,738 @@
-* {
+/* ================= RESET ================= */
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0d1117;
-  color: white;
-  height: 100vh;
-  overflow: hidden;
+html,
+body{
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.app {
-  height: 100vh;
-  padding: 20px;
+/* ================= BODY ================= */
+
+body{
+
+  font-family: 'Poppins', sans-serif;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(88,166,255,0.22),
+      transparent 35%),
+
+    radial-gradient(circle at bottom right,
+      rgba(191,0,255,0.18),
+      transparent 35%),
+
+    #0d1117;
+
+  color: white;
+}
+
+/* ================= APP ================= */
+
+.app{
+  min-height: 100vh;
+
+  padding: 24px;
+
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 }
 
-.contenido {
+/* ================= CONTENIDO ================= */
+
+.contenido{
+
   display: flex;
   flex-direction: row;
-  gap: 20px;
+
+  gap: 24px;
+
   align-items: flex-start;
   justify-content: center;
-  margin-top: 16px;
+
+  margin-top: 18px;
+
+  width: 100%;
 }
 
-.titulo {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-  background: linear-gradient(90deg, #58a6ff, #bf00ff);
+/* ================= TITULOS ================= */
+
+.titulo{
+
+  font-size: 2.7rem;
+  font-weight: 800;
+
+  margin-bottom: 6px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #58a6ff,
+      #bf00ff
+    );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(88,166,255,0.35),
+    0 0 28px rgba(191,0,255,0.22);
 }
 
-.subtitulo {
-  opacity: 0.5;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
+.subtitulo{
+
+  opacity: 0.65;
+
+  margin-bottom: 24px;
+
+  font-size: 0.95rem;
+
+  letter-spacing: 0.5px;
 }
 
-.buscador {
+/* ================= BUSCADOR ================= */
+
+.buscador{
+
   display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
-}
+  gap: 12px;
 
-.buscador input {
-  padding: 12px 16px;
-  font-size: 16px;
-  width: 260px;
-  border-radius: 12px;
-  border: 1px solid #30363d;
-  background: #161b22;
-  color: white;
-  outline: none;
-  transition: border 0.3s;
-}
+  margin-bottom: 16px;
 
-.buscador input:focus {
-  border-color: #58a6ff;
-}
-
-.buscador button {
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: none;
-  background: linear-gradient(90deg, #58a6ff, #bf00ff);
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: opacity 0.3s;
-}
-
-.buscador button:hover {
-  opacity: 0.85;
-}
-
-.toggle-unidad {
-  margin-bottom: 12px;
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 10px;
-  padding: 6px 16px;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.error {
-  color: #f85149;
-  margin-bottom: 12px;
-}
-
-.clima-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 20px;
-  padding: 16px 30px;
-  text-align: center;
   width: 100%;
-  max-width: 420px;
-  margin-bottom: 12px;
+  max-width: 520px;
 }
 
-.clima-card .icono {
-  font-size: 3.5rem;
+.buscador input{
+
+  flex: 1;
+
+  padding: 14px 18px;
+
+  font-size: 16px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(22,27,34,0.72);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: white;
+
+  outline: none;
+
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.buscador input:focus{
+
+  border-color: #58a6ff;
+
+  box-shadow:
+    0 0 14px rgba(88,166,255,0.25);
+
+  transform: scale(1.01);
+}
+
+.buscador input::placeholder{
+  color: rgba(255,255,255,0.45);
+}
+
+.buscador button{
+
+  padding: 14px 22px;
+
+  border: none;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #58a6ff,
+      #bf00ff
+    );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.buscador button:hover{
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 24px rgba(88,166,255,0.25);
+}
+
+.buscador button::before{
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.25),
+      transparent
+    );
+
+  transition: 0.5s;
+}
+
+.buscador button:hover::before{
+  left: 100%;
+}
+
+/* ================= TOGGLE ================= */
+
+.toggle-unidad{
+
+  margin-bottom: 16px;
+
+  background:
+    rgba(22,27,34,0.72);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  padding: 8px 18px;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.toggle-unidad:hover{
+
+  border-color: #58a6ff;
+
+  transform: translateY(-2px);
+}
+
+/* ================= ERROR ================= */
+
+.error{
+
+  color: #ff6b6b;
+
+  margin-bottom: 14px;
+
+  font-size: 0.92rem;
+}
+
+/* ================= CLIMA CARD ================= */
+
+.clima-card{
+
+  background:
+    rgba(22,27,34,0.72);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 22px 32px;
+
+  text-align: center;
+
+  width: 100%;
+  max-width: 430px;
+
+  margin-bottom: 16px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.clima-card:hover{
+
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(88,166,255,0.3);
+
+  box-shadow:
+    0 12px 36px rgba(88,166,255,0.12);
+}
+
+.clima-card .icono{
+
+  font-size: 4rem;
+
+  margin-bottom: 10px;
+}
+
+.clima-card .ciudad{
+
+  font-size: 1.3rem;
+  font-weight: 700;
+
   margin-bottom: 6px;
 }
 
-.clima-card .ciudad {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+.clima-card .temp{
+
+  font-size: 4rem;
+  font-weight: 800;
+
+  margin: 8px 0;
 }
 
-.clima-card .temp {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin: 6px 0;
-}
+.clima-card .descripcion{
 
-.clima-card .descripcion {
   text-transform: capitalize;
+
   opacity: 0.7;
-  margin-bottom: 12px;
-}
 
-.clima-card .detalles {
-  display: flex;
-  justify-content: space-around;
-  border-top: 1px solid #30363d;
-  padding-top: 12px;
-}
+  margin-bottom: 14px;
 
-.clima-card .detalles div p:first-child {
-  opacity: 0.5;
-  font-size: 0.85rem;
-}
-
-.clima-card .detalles div p:last-child {
   font-size: 1rem;
-  font-weight: 600;
 }
 
-.pronostico {
+.clima-card .detalles{
+
   display: flex;
-  gap: 8px;
+
+  justify-content: space-around;
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+
+  padding-top: 14px;
+
+  gap: 10px;
+}
+
+.clima-card .detalles div p:first-child{
+
+  opacity: 0.55;
+
+  font-size: 0.82rem;
+
+  margin-bottom: 4px;
+}
+
+.clima-card .detalles div p:last-child{
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ================= PRONOSTICO ================= */
+
+.pronostico{
+
+  display: flex;
+
+  gap: 12px;
+
   flex-wrap: wrap;
+
   justify-content: center;
-  max-width: 500px;
-  margin-bottom: 12px;
+
+  max-width: 520px;
+
+  margin-bottom: 18px;
 }
 
-.pronostico-dia {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 14px;
-  padding: 10px 14px;
+.pronostico-dia{
+
+  background:
+    rgba(22,27,34,0.72);
+
+  backdrop-filter: blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  padding: 12px 16px;
+
   text-align: center;
-  min-width: 70px;
+
+  min-width: 82px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.pronostico-dia .dia {
-  font-size: 0.75rem;
+.pronostico-dia:hover{
+
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(88,166,255,0.28);
+
+  box-shadow:
+    0 10px 22px rgba(88,166,255,0.1);
+}
+
+.pronostico-dia .dia{
+
+  font-size: 0.78rem;
+
   opacity: 0.6;
-  margin-bottom: 4px;
+
+  margin-bottom: 6px;
 }
 
-.pronostico-dia .icono {
-  font-size: 1.5rem;
-  margin-bottom: 4px;
+.pronostico-dia .icono{
+
+  font-size: 1.7rem;
+
+  margin-bottom: 6px;
 }
 
-.pronostico-dia .temp {
-  font-size: 0.95rem;
-  font-weight: 600;
+.pronostico-dia .temp{
+
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.historial {
-  max-width: 420px;
+/* ================= HISTORIAL ================= */
+
+.historial{
+
+  max-width: 430px;
   width: 100%;
 }
 
-.historial h3 {
+.historial h3{
+
   opacity: 0.5;
+
   font-size: 0.85rem;
-  margin-bottom: 8px;
+
+  margin-bottom: 10px;
+
   text-transform: uppercase;
+
   letter-spacing: 1px;
 }
 
-.historial-items {
+.historial-items{
+
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+
+  gap: 10px;
 }
 
-.historial-items span {
-  background: #161b22;
-  border: 1px solid #30363d;
+.historial-items span{
+
+  background:
+    rgba(22,27,34,0.72);
+
+  backdrop-filter: blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
   border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 0.9rem;
+
+  padding: 8px 16px;
+
+  font-size: 0.92rem;
+
   cursor: pointer;
-  transition: border-color 0.3s;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.historial-items span:hover {
+.historial-items span:hover{
+
   border-color: #58a6ff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(88,166,255,0.12);
 }
 
-/* ================= LOGIN PREMIUM ================= */
+/* ================= LOGIN ================= */
 
 .login-page{
+
   min-height: 100vh;
+
   display: flex;
+
   justify-content: center;
   align-items: center;
+
+  padding: 20px;
 }
 
 .login-card{
-  width: 380px;
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 24px;
-  padding: 40px 32px;
+
+  width: 390px;
+
+  background:
+    rgba(22,27,34,0.74);
+
+  backdrop-filter: blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 28px;
+
+  padding: 42px 34px;
+
   box-shadow:
     0 0 30px rgba(88,166,255,0.08),
     0 0 60px rgba(191,0,255,0.06);
 }
 
 .login-title{
-  font-size: 2.3rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 8px;
 
-  background: linear-gradient(90deg, #58a6ff, #bf00ff);
+  font-size: 2.5rem;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  margin-bottom: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #58a6ff,
+      #bf00ff
+    );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .login-subtitle{
+
   text-align: center;
-  opacity: 0.55;
-  margin-bottom: 28px;
-  font-size: 0.95rem;
+
+  opacity: 0.6;
+
+  margin-bottom: 30px;
+
+  font-size: 0.96rem;
 }
 
 .login-box{
+
   display: flex;
+
   flex-direction: column;
+
   gap: 16px;
 }
 
 .login-input{
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid #30363d;
-  background: #0d1117;
+
+  padding: 15px 16px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(13,17,23,0.8);
+
   color: white;
+
   font-size: 15px;
+
   outline: none;
-  transition: all 0.3s ease;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
 }
 
 .login-input:focus{
+
   border-color: #58a6ff;
 
   box-shadow:
-    0 0 10px rgba(88,166,255,0.25);
+    0 0 14px rgba(88,166,255,0.25);
+
+  transform: scale(1.01);
 }
 
 .login-btn{
-  padding: 14px;
-  border: none;
-  border-radius: 14px;
 
-  background: linear-gradient(
-    90deg,
-    #58a6ff,
-    #bf00ff
-  );
+  padding: 15px;
+
+  border: none;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #58a6ff,
+      #bf00ff
+    );
 
   color: white;
+
   font-size: 15px;
   font-weight: 700;
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .login-btn:hover{
-  transform: translateY(-2px);
+
+  transform: translateY(-3px);
 
   box-shadow:
-    0 10px 20px rgba(88,166,255,0.2);
+    0 12px 26px rgba(88,166,255,0.22);
 }
 
 .login-error{
-  color: #f85149;
+
+  color: #ff6b6b;
+
   text-align: center;
+
   font-size: 0.92rem;
-  margin-top: 4px;
+
+  margin-top: 6px;
+}
+
+/* ================= SCROLL ================= */
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background: #30363d;
+
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #58a6ff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px){
+
+  .contenido{
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .titulo{
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .subtitulo{
+    text-align: center;
+  }
+
+  .buscador{
+
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .buscador input{
+    width: 100%;
+  }
+
+  .buscador button{
+    width: 100%;
+  }
+
+  .clima-card{
+    max-width: 100%;
+  }
+
+  .historial{
+    max-width: 100%;
+  }
+
+  .login-card{
+    width: 100%;
+  }
+
+  .pronostico{
+    justify-content: center;
+  }
 }
